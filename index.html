@@ -71,6 +71,7 @@
                         <span class="skill">OAuth</span>
                         <span class="skill">SMTP</span>
                         <span class="skill">Git</span>
+                        <span class="skill">WordPress</span>
                     </div>
                 </div>
             </div>
@@ -85,7 +86,10 @@
                 <!-- Project 1 -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="https://placehold.co/600x400/2563eb/ffffff?text=CDA-IT+Helpdesk" alt="CDA IT-Helpdesk System">
+                        <video class="responsive-video" autoplay muted loop playsinline>
+                            <source src="System_Capture.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
                     <div class="project-info">
                         <h3>CDA IT-Helpdesk System</h3>
@@ -99,13 +103,25 @@
                             <span class="project-tag">OAuth</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="btn">Live Demo</a>
+                            <!-- Added ID for modal trigger -->
+                            <a href="#" class="btn" id="openModal">Click to Full Screen</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Modal -->
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <video id="demoVideo" controls autoplay>
+                <source src="System_Capture.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
@@ -191,7 +207,6 @@
                 : '<i class="fas fa-bars"></i>';
         });
         
-        // Close mobile nav when clicking on a link
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
@@ -199,34 +214,39 @@
             });
         });
         
-        // Form submission handling
+        // Contact Form (demo only)
         const contactForm = document.getElementById('contactForm');
-        
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            
-            // Get form values
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const message = document.getElementById('message').value;
-            
-            // In a real application, you would send this data to a server
             console.log('Form submitted:', { name, email, message });
-            
-            // Show success message
             alert('Thank you for your message! I will get back to you soon.');
-            
-            // Reset form
             contactForm.reset();
         });
         
-        // Add scroll effect to navbar
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
-            } else {
-                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+        // Modal for Video
+        const modal = document.getElementById("videoModal");
+        const openBtn = document.getElementById("openModal");
+        const closeBtn = document.querySelector(".close");
+        const demoVideo = document.getElementById("demoVideo");
+
+        openBtn.addEventListener("click", function(e) {
+            e.preventDefault();
+            modal.style.display = "flex";
+            demoVideo.play();
+        });
+
+        closeBtn.addEventListener("click", function() {
+            modal.style.display = "none";
+            demoVideo.pause();
+        });
+
+        window.addEventListener("click", function(e) {
+            if (e.target === modal) {
+                modal.style.display = "none";
+                demoVideo.pause();
             }
         });
     </script>
