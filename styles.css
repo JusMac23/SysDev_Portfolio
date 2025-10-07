@@ -173,6 +173,33 @@ nav {
     cursor: pointer;
 }
 
+.nav-links li a {
+    font-family: 'Figtree', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* spacing between icon and text */
+    color: #1f2937; /* neutral dark text */
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a i {
+    color: #2563eb; /* blue tone for icons */
+    font-size: 1rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #2563eb;
+}
+
+.nav-links li a:hover i {
+    transform: scale(1.2);
+    color: #1d4ed8; /* darker blue on hover */
+}
+
+
 /* Hero Section */
 .hero {
     padding-top: 10rem;

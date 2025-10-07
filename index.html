@@ -14,12 +14,12 @@
         <div class="container">
             <nav>
                 <a href="#" class="logo">SysDev<span>Portfolio</span></a>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
+                    <ul class="nav-links">
+                        <li><a href="#home"><i class="fas fa-house"></i> Home</a></li>
+                        <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+                        <li><a href="#projects"><i class="fas fa-code"></i> Projects</a></li>
+                        <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                    </ul>
                 <div class="hamburger">
                     <i class="fas fa-bars"></i>
                 </div>
@@ -86,7 +86,8 @@
                 <!-- Project 1 -->
                 <div class="project-card">
                     <div class="project-image">
-                        <video class="responsive-video" autoplay muted loop playsinline>
+                        <!-- ✅ Removed playsinline for Firefox compatibility -->
+                        <video class="responsive-video" autoplay muted loop>
                             <source src="System_Capture.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
@@ -103,7 +104,6 @@
                             <span class="project-tag">OAuth</span>
                         </div>
                         <div class="project-links">
-                            <!-- Added ID for modal trigger -->
                             <a href="#" class="btn" id="openModal">Click to Full Screen</a>
                         </div>
                     </div>
@@ -115,7 +115,7 @@
     <!-- Modal -->
     <div id="videoModal" class="modal">
         <div class="modal-content">
-            <span class="close">&times;</span>
+            <span class="close" aria-label="Close video modal">&times;</span>
             <video id="demoVideo" controls autoplay>
                 <source src="System_Capture.mp4" type="video/mp4">
                 Your browser does not support the video tag.
@@ -130,27 +130,21 @@
             <div class="contact-container">
                 <div class="contact-info">
                     <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
                         <div>
                             <h3>Email</h3>
                             <p>jmacarayan17@gmail.com</p>
                         </div>
                     </div>
                     <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
+                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
                         <div>
                             <h3>Phone</h3>
                             <p>+63 945-8739-896</p>
                         </div>
                     </div>
                     <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
                         <div>
                             <h3>Location</h3>
                             <p>Potrero, Malabon City</p>
@@ -185,10 +179,11 @@
                 <h3>SysDevPortfolio</h3>
                 <p>Crafting digital experiences with code and creativity.</p>
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <!-- ✅ Added title and aria-label for accessibility -->
+                    <a href="https://github.com/" title="Visit my GitHub profile" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/" title="Visit my LinkedIn profile" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://twitter.com/" title="Visit my Twitter profile" aria-label="Twitter Profile"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com/" title="Visit my Instagram profile" aria-label="Instagram Profile"><i class="fab fa-instagram"></i></a>
                 </div>
                 <p class="copyright">&copy; 2025 Jus_Mac. All rights reserved.</p>
             </div>
@@ -199,33 +194,28 @@
         // Mobile Navigation Toggle
         const hamburger = document.querySelector('.hamburger');
         const navLinks = document.querySelector('.nav-links');
-        
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('active');
             hamburger.innerHTML = navLinks.classList.contains('active') 
                 ? '<i class="fas fa-times"></i>' 
                 : '<i class="fas fa-bars"></i>';
         });
-        
+
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
                 hamburger.innerHTML = '<i class="fas fa-bars"></i>';
             });
         });
-        
-        // Contact Form (demo only)
+
+        // Contact Form (demo)
         const contactForm = document.getElementById('contactForm');
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-            console.log('Form submitted:', { name, email, message });
             alert('Thank you for your message! I will get back to you soon.');
             contactForm.reset();
         });
-        
+
         // Modal for Video
         const modal = document.getElementById("videoModal");
         const openBtn = document.getElementById("openModal");
