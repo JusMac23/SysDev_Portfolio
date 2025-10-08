@@ -258,8 +258,8 @@ nav {
 
 .hero-text h1 .highlight {
     background: linear-gradient(90deg, #00c6ff, #0072ff);
-    -webkit-background-clip: text;      /* Vendor-prefixed version first */
-    background-clip: text;              /* Standard version second */
+    -webkit-background-clip: text;     
+    background-clip: text;             
     -webkit-text-fill-color: transparent;
 }
 
