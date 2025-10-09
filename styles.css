@@ -332,7 +332,7 @@ nav {
 }
 
 .hero-image img {
-    max-width: 80%;
+    max-width: 50%;
     border-radius: 50%;
     border: 5px solid var(--primary-color);
     box-shadow: var(--box-shadow);
@@ -357,7 +357,7 @@ nav {
 
 @keyframes typing {
     from { width: 0; }
-    to { width: 13ch; }
+    to { width: 15ch; }
 }
 
 @keyframes blink {
@@ -384,7 +384,7 @@ nav {
     }
 
     .hero-image img {
-        max-width: 70%;
+        max-width: 50%;
     }
 }
 
