@@ -78,15 +78,23 @@ a:hover {
 }
 
 .btn {
-    display: inline-block;
-    padding: 12px 28px;
-    background-color: var(--primary-color);
-    color: var(--light-text);
-    border-radius: var(--border-radius);
-    font-weight: 600;
-    transition: var(--transition);
-    border: none;
-    cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px; /* space between icon and text */
+  text-decoration: none;
+  font-family: 'Figtree', sans-serif;
+  font-weight: 500;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  background-color: #2563eb; /* example blue */
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.material-symbols-outlined {
+  font-size: 20px;
+  vertical-align: middle;
 }
 
 .btn:hover {

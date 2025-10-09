@@ -92,3 +92,12 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+function downloadResume() {
+  const link = document.createElement('a');
+  link.href = 'assets/Justine Macarayan_Resume.pdf';
+  link.download = 'Justine Macarayan_Resume.pdf';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
