@@ -136,7 +136,7 @@ header {
     left: 0;
     width: 100%;
     z-index: 1000;
-    background-color: #202633; /* darker header */
+    background-color: #202633; 
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -428,20 +428,20 @@ nav {
 }
 
 .skill {
-    background: rgba(255, 255, 255, 0.15); /* Contrast-friendly background */
-    color: #202020; /* Text color */
+    background: rgba(255, 255, 255, 0.15); 
+    color: #202020; 
     border-radius: 16px;
     padding: 30px 30px;
     font-size: 1rem;
     display: flex;
-    flex-direction: column; /* ✅ Stack icon and text vertically */
-    align-items: center; /* ✅ Center horizontally */
-    justify-content: center; /* ✅ Center vertically */
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
     gap: 15px;
-    text-align: center; /* ✅ Center text */
+    text-align: center; 
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-    min-width: 140px; /* keeps uniform size */
+    min-width: 140px; 
 }
 
 .skill:hover {
@@ -451,7 +451,7 @@ nav {
 }
 
 .skill i {
-    font-size: 3.5rem; /* ✅ Bigger logo size */
+    font-size: 3.5rem; 
     display: block;
 }
 
@@ -473,11 +473,11 @@ nav {
 
 /* Icon Colors for Tech Stack (moved from inline styles) */
 .oauth-icon {
-    color: #4285F4; /* Google OAuth Blue */
+    color: #4285F4;
 }
 
 .smtp-icon {
-    color: #EA4335; /* Gmail SMTP Red */
+    color: #EA4335; 
 }
 
 
