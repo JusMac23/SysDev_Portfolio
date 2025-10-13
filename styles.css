@@ -474,20 +474,8 @@ nav {
 .skill:nth-child(8):hover i { color: #F7DF1E; } /* JavaScript */
 .skill:nth-child(9):hover i { color: #E34F26; } /* HTML5 */
 .skill:nth-child(10):hover i { color: #1572B6; } /* CSS3 */
-.skill:nth-child(11):hover i { color: #4285F4; } /* OAuth */
-.skill:nth-child(12):hover i { color: #EA4335; } /* SMTP */
 .skill:nth-child(13):hover i { color: #F05032; } /* Git */
 .skill:nth-child(14):hover i { color: #21759B; } /* WordPress */
-
-/* Icon Colors for Tech Stack (moved from inline styles) */
-.oauth-icon {
-    color: #4285F4;
-}
-
-.smtp-icon {
-    color: #EA4335; 
-}
-
 
 
 /* Projects Section */
